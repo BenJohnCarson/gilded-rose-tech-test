@@ -1,5 +1,3 @@
-require 'gilded_rose'
-
 describe Item do
   subject(:item)      { described_class.new("item", 5, 10) }
 
