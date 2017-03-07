@@ -1,5 +1,5 @@
-describe "Backstage pass" do
-  subject(:pass)  { Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 10) }
+describe BackstagePass do
+  subject(:pass)  { described_class.new("Backstage passes to a TAFKAL80ETC concert", 11, 10) }
 
   let(:rose)      { GildedRose.new([pass]) }
   
@@ -53,7 +53,7 @@ describe "Backstage pass" do
       end
     end
   
-    let(:expensive_pass)  { Item.new("Backstage passes to a TAFKAL80ETC concert", 5, 49) }
+    let(:expensive_pass)  { described_class.new("Backstage passes to a TAFKAL80ETC concert", 5, 49) }
     let(:rose2)      { GildedRose.new([expensive_pass]) }
     
     it "can't go above 50 quality" do
