@@ -19,6 +19,7 @@
 
 
 require 'gilded_rose'
+require 'item'
 
 
 RSpec.configure do |config|

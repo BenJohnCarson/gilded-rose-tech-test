@@ -1,5 +1,5 @@
-describe Item do
-  subject(:item)  { described_class.new("item", 5, 10) }
+describe NormalItem do
+  subject(:item)  { described_class.new("fish", 5, 10) }
 
   let(:rose)      { GildedRose.new([item]) }
   
