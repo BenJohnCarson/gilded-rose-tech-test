@@ -1,5 +1,5 @@
-describe "Aged Brie" do
-  subject(:brie)  { Item.new("Aged Brie", 3, 40) }
+describe AgedBrie do
+  subject(:brie)  { described_class.new("Aged Brie", 3, 40) }
 
   let(:rose)      { GildedRose.new([brie]) }
   
