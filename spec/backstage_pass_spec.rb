@@ -4,7 +4,7 @@ describe "Backstage pass" do
   let(:rose)      { GildedRose.new([pass]) }
   
   describe "#update_quality" do
-    context "11 days left" do
+    context "sell_in > 10" do
       before do
         rose.update_quality
       end
@@ -18,48 +18,48 @@ describe "Backstage pass" do
         updated_item = rose.items.pop
         expect(updated_item.quality).to eq 11
       end
+    end
       
-      context "10 days left" do
-        before do
-          rose.update_quality
-        end
-        
-        it "increases quality by 2" do
-          updated_item = rose.items.pop
-          expect(updated_item.quality).to eq 13
-        end
-        
-        context "5 days left" do
-          before do
-            5.times { rose.update_quality }
-          end
-          
-          it "increases quality by 3" do
-            updated_item = rose.items.pop
-            expect(updated_item.quality).to eq 24
-          end
-          
-          context "0 days left" do
-            before do
-              5.times { rose.update_quality }
-            end
-            
-            it "quality is 0" do
-              updated_item = rose.items.pop
-              expect(updated_item.quality).to eq 0
-            end
-          end
-        end
+    context "sell_in < 10" do
+      before do
+        2.times { rose.update_quality }
+      end
+      
+      it "increases quality by 2" do
+        updated_item = rose.items.pop
+        expect(updated_item.quality).to eq 13
       end
     end
-  end
+        
+    context "sell_in < 5" do
+      before do
+        7.times { rose.update_quality }
+      end
+      
+      it "increases quality by 3" do
+        updated_item = rose.items.pop
+        expect(updated_item.quality).to eq 24
+      end
+    end
+          
+    context "sell_in < 0" do
+      before do
+        12.times { rose.update_quality }
+      end
+      
+      it "quality is 0" do
+        updated_item = rose.items.pop
+        expect(updated_item.quality).to eq 0
+      end
+    end
   
-  let(:expensive_pass)  { Item.new("Backstage passes to a TAFKAL80ETC concert", 5, 49) }
-  let(:rose2)      { GildedRose.new([expensive_pass]) }
-  
-  it "can't go above 50 quality" do
-    2.times { rose2.update_quality }
-    updated_item = rose2.items.pop
-    expect(updated_item.quality).to eq 50
+    let(:expensive_pass)  { Item.new("Backstage passes to a TAFKAL80ETC concert", 5, 49) }
+    let(:rose2)      { GildedRose.new([expensive_pass]) }
+    
+    it "can't go above 50 quality" do
+      2.times { rose2.update_quality }
+      updated_item = rose2.items.pop
+      expect(updated_item.quality).to eq 50
+    end
   end
 end
