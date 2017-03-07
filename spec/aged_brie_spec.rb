@@ -4,7 +4,7 @@ describe "Aged Brie" do
   let(:rose)      { GildedRose.new([brie]) }
   
   describe "#update_quality" do
-    context "one day has passed" do
+    context "sell_in > 0" do
       before do
         rose.update_quality
       end
@@ -20,7 +20,7 @@ describe "Aged Brie" do
       end
     end
     
-    context "four days have passed" do
+    context "sell_in < 0" do
       before do
         4.times { rose.update_quality }
       end

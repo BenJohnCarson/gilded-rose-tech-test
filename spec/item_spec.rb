@@ -4,7 +4,7 @@ describe Item do
   let(:rose)      { GildedRose.new([item]) }
   
   describe "#update_quality" do
-    context "one day has passed" do
+    context "sell_in is > 0" do
       before do
         rose.update_quality
       end
@@ -20,7 +20,7 @@ describe Item do
       end
     end
     
-    context "six days have passed" do
+    context "sell_in is < 0" do
       before do
         6.times { rose.update_quality }
       end
