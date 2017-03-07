@@ -1,4 +1,4 @@
-class NormalItem < Item
+class NormalItem < DefaultItem
   def update
     @sell_in -= 1
     return if quality == 0

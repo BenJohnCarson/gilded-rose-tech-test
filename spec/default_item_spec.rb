@@ -1,4 +1,4 @@
-describe Sulfuras do
+describe DefaultItem do
   subject(:sulfuras)  { described_class.new("Sulfuras, Hand of Ragnaros", 5, 10) }
 
   let(:rose)      { GildedRose.new([sulfuras]) }

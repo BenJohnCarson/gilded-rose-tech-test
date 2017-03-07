@@ -1,7 +1,7 @@
 require_relative 'item'
+require_relative 'default_item'
 require_relative 'normal_item'
 require_relative 'aged_brie'
-require_relative 'sulfuras'
 require_relative 'backstage_pass'
 
 class GildedRose
