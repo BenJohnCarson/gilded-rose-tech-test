@@ -3,6 +3,7 @@ require_relative 'default_item'
 require_relative 'normal_item'
 require_relative 'aged_brie'
 require_relative 'backstage_pass'
+require_relative 'conjured_item'
 
 class GildedRose
   

@@ -3,7 +3,7 @@ describe DefaultItem do
 
   let(:rose)      { GildedRose.new([sulfuras]) }
   
-  describe "#update_quality" do
+  describe "#update" do
     context "one day has passed" do
       before do
         rose.update_quality

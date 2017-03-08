@@ -3,7 +3,7 @@ describe BackstagePass do
 
   let(:rose)      { GildedRose.new([pass]) }
   
-  describe "#update_quality" do
+  describe "#update" do
     context "sell_in > 10" do
       before do
         rose.update_quality

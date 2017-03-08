@@ -3,7 +3,7 @@ describe AgedBrie do
 
   let(:rose)      { GildedRose.new([brie]) }
   
-  describe "#update_quality" do
+  describe "#update" do
     context "sell_in > 0" do
       before do
         rose.update_quality

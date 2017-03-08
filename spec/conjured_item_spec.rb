@@ -1,6 +1,6 @@
-describe NormalItem do
-  subject(:item)  { described_class.new("fish", 5, 10) }
-
+describe ConjuredItem do
+  subject(:item)  { described_class.new("magic", 5, 15) }
+  
   let(:rose)      { GildedRose.new([item]) }
   
   describe "#update" do
@@ -14,9 +14,9 @@ describe NormalItem do
         expect(updated_item.sell_in).to eq 4
       end
       
-      it "decreases quality by 1" do
+      it "decreases quality by 2" do
         updated_item = rose.items.pop
-        expect(updated_item.quality).to eq 9
+        expect(updated_item.quality).to eq 13
       end
     end
     
@@ -25,9 +25,9 @@ describe NormalItem do
         6.times { rose.update_quality }
       end
       
-      it "decreases quality by 2" do
+      it "decreases quality by 4" do
         updated_item = rose.items.pop
-        expect(updated_item.quality).to eq 3
+        expect(updated_item.quality).to eq 1
       end
       
       it "can't go into negative quality" do
